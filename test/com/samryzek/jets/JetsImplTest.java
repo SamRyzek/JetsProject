@@ -12,7 +12,7 @@ public class JetsImplTest {
 
 	@Before
 	public void setUp() throws Exception {
-		j = new JetsImpl();
+		j = new JetsImpl(null, 0, 0, 0, null);
 	}
 
 	@After
@@ -27,10 +27,12 @@ public class JetsImplTest {
 		double c = 767.27;
 		
 		double expected = .13;
-		double result = j.convertToMach(s, c);
+		double result = j.setSpeed(s, c);
 			expected = s/c;
 		assertEquals(expected, result, 0.01);
-		assertEquals(.1303, j.convertToMach(100, 767.27), 0.01);
+		assertEquals(.1303, j.setSpeed(100, 767.27), 0.01);
+		assertEquals(1, j.setSpeed(767.27, 767.27), 0.01);
+		assertEquals(1.5, j.setSpeed(1150.90, 767.27), 0.01);
 		
 	}
 

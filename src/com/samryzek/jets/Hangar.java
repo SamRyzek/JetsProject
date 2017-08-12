@@ -1,12 +1,19 @@
 package com.samryzek.jets;
 
 public class Hangar {
-	
-	Hangar h = new Hangar();
+
+
+	public JetsImpl[] getJets() {
+		return jets;
+	}
+
+	public void setJets(JetsImpl[] jets) {
+		this.jets = jets;
+	}
 
 	public Hangar() 
 	{
-		
+		jets = new JetsImpl[4];
 	}
 	
 	JetsImpl [] jets;

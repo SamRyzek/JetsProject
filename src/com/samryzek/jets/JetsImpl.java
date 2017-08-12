@@ -1,7 +1,5 @@
 package com.samryzek.jets;
 
-import java.util.Arrays;
-
 public class JetsImpl {
 
 	private String model;
@@ -10,18 +8,10 @@ public class JetsImpl {
 	private int capacity;
 	Pilot pilot;
 	double m = 767.27;
-	
-	JetsImpl [] jets = new JetsImpl[5];
-		 
-	
-	public JetsImpl() {
+
+
+	public JetsImpl(String model, double speed, double range, int capacity, Pilot pilot) {
 		// TODO Auto-generated constructor stub
-	}
-	
-	public double convertToMach(double s, double m) {
-		
-		return s / m;
-		
 	}
 
 	public String getModel() {
@@ -36,8 +26,9 @@ public class JetsImpl {
 		return speed;
 	}
 
-	public void setSpeed(double speed) {
-		this.speed = speed;
+	public double setSpeed(double s, double m) {
+		this.speed = s/m;
+		return speed;
 	}
 
 	public double getRange() {
@@ -56,15 +47,7 @@ public class JetsImpl {
 		this.capacity = capacity;
 	}
 
-	public JetsImpl(String model, double speed, double range, int capacity, Pilot pilot, double m, JetsImpl[] jets) {
-		
-		this.model = model;
-		this.speed = speed;
-		this.range = range;
-		this.capacity = capacity;
-		this.pilot = pilot;
-		this.jets = jets;
-	}
+
 
 	@Override
 	public String toString() {
@@ -81,11 +64,10 @@ public class JetsImpl {
 		builder.append(pilot);
 		builder.append(", m=");
 		builder.append(m);
-		builder.append(", jets=");
-		builder.append(Arrays.toString(jets));
 		builder.append("]");
 		return builder.toString();
 	}
+
 	
 	
 	

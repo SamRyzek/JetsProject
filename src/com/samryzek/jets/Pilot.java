@@ -7,10 +7,11 @@ public class Pilot
 	private int age;
 	private int experiance; 
 	
-	Pilot [] p = new Pilot[3];
 	
-	public Pilot() {
-		
+	
+
+	public Pilot(String name2, int age2, int experience) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getName() {
