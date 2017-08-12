@@ -5,13 +5,13 @@ public class Pilot
 
 	private String name;
 	private int age;
-	private int experiance; 
+	private int experience; 
 	
-	
-	
+	public Pilot(String name, int age, int experience) {
+		this.name = name;
+		this.age = age;
+		this.experience = experience;
 
-	public Pilot(String name2, int age2, int experience) {
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getName() {
@@ -31,11 +31,24 @@ public class Pilot
 	}
 
 	public int getExperiance() {
-		return experiance;
+		return experience;
 	}
 
 	public void setExperiance(int experiance) {
-		this.experiance = experiance;
+		this.experience = experiance;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pilot [name=");
+		builder.append(name);
+		builder.append(", age=");
+		builder.append(age);
+		builder.append(", experience=");
+		builder.append(experience);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 }

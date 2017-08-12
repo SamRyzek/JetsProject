@@ -11,7 +11,12 @@ public class JetsImpl {
 
 
 	public JetsImpl(String model, double speed, double range, int capacity, Pilot pilot) {
-		// TODO Auto-generated constructor stub
+		this.model = model;
+		this.speed = speed;
+		this.range = range;
+		this.capacity = capacity;
+		this.pilot = pilot;
+		
 	}
 
 	public String getModel() {
