@@ -41,13 +41,9 @@ public class Pilot
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Pilot [name=");
-		builder.append(name);
-		builder.append(", age=");
-		builder.append(age);
-		builder.append(", experience=");
-		builder.append(experience);
-		builder.append("]");
+		builder.append("\tPilot: " + name + "\n");
+		builder.append("\tAge: " + age + "\n");
+		builder.append("\tExperience " + experience + "\n");
 		return builder.toString();
 	}
 	

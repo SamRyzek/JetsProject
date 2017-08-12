@@ -14,7 +14,7 @@ Jets must have a model, speed, range, and price associated with them. The speed 
 
 For those of you that are having trouble getting started, we have provided you with a potential UML diagram here.
 
-User Story #1
+User Story #1  Done
 
 There is a menu with 5 options:
 
@@ -41,7 +41,7 @@ A user can add custom jets to the fleet.
 
 Stretch Goals
 
-User Story #6
+User Story #6 /Done
 
 Each jet has a pilot
 
@@ -53,7 +53,7 @@ User Story #8
 
 Users can hire pilots
 
-User Story #9
+User Story #9 Done
 
 Whenever a jet's information is displayed, that jet's pilot and his/her information should also be displayed
 

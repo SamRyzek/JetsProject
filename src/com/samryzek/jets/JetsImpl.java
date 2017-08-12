@@ -5,16 +5,16 @@ public class JetsImpl {
 	private String model;
 	private double speed;
 	private double range;
-	private int capacity;
+	private int price;
 	Pilot pilot;
 	double m = 767.27;
 
 
-	public JetsImpl(String model, double speed, double range, int capacity, Pilot pilot) {
+	public JetsImpl(String model, double speed, double range, int price, Pilot pilot) {
 		this.model = model;
 		this.speed = speed;
 		this.range = range;
-		this.capacity = capacity;
+		this.price = price;
 		this.pilot = pilot;
 		
 	}
@@ -44,32 +44,22 @@ public class JetsImpl {
 		this.range = range;
 	}
 
-	public int getCapacity() {
-		return capacity;
+	public int getPrice() {
+		return price;
 	}
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public void setPrice(int price) {
+		this.price = price;
 	}
-
-
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("JetsImpl [model=");
-		builder.append(model);
-		builder.append(", speed=");
-		builder.append(speed);
-		builder.append(", range=");
-		builder.append(range);
-		builder.append(", capacity=");
-		builder.append(capacity);
-		builder.append(", pilot=");
+		builder.append("Model: " + model + "\n");
+		builder.append("Speed: " + speed + "\n");
+		builder.append("Range: " + range + "\n");
+		builder.append("Price: " + price + "\n");
 		builder.append(pilot);
-		builder.append(", m=");
-		builder.append(m);
-		builder.append("]");
 		return builder.toString();
 	}
 
