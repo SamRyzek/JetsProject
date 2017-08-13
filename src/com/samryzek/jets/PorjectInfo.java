@@ -27,33 +27,33 @@ User Story #2 DONE
 
 List fleet prints out the model, speed, range, and price of each jet. (There must be at least 5 jets stored when the program starts).
 
-User Story #3
+User Story #3 DONE
 
 The view fastest jet and longest range options both print out all of the information about their jets.
 
-User Story #4 Done
+User Story #4 DONE
 
 Quit exits the program.
 
-User Story #5
+User Story #5 DONE
 
 A user can add custom jets to the fleet.
 
 Stretch Goals
 
-User Story #6 /Done
+User Story #6 DONE
 
-Each jet has a pilot
+Each jet has a pilot 
 
 User Story #7
 
 Assign a random pilot to each jet that is created
 
-User Story #8
+User Story #8 DONE
 
 Users can hire pilots
 
-User Story #9 Done
+User Story #9 DONE
 
 Whenever a jet's information is displayed, that jet's pilot and his/her information should also be displayed
 

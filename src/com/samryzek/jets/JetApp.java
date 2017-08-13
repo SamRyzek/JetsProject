@@ -20,44 +20,63 @@ public class JetApp {
 			// menu
 			System.out.println("Please select from the following menu: ");
 			System.out.println("[1] List fleet");
-			System.out.println("[2] View fastest jet in fleet");
-			System.out.println("[3] View jet with longest range");
-			System.out.println("[4] Add jet to fleet");
-			System.out.println("[5] Quit");
+			System.out.println("[2] List Pilots");
+			System.out.println("[3] View fastest jet in fleet");
+			System.out.println("[4] View jet with longest range");
+			System.out.println("[5] Add jet to fleet");
+			System.out.println("[6] Hire a pilot");
+			System.out.println("[7] Quit");
 			menu = kb.next();
 
+			// switch takes user through the various menu options
 			switch (menu) {
-			case "1": {
+			case "1":
+			// case 1 lists the fleet of jets
+			{
 				for (int i = 0; i < h.getJets().length; i++) {
 					System.out.println(h.getJets()[i]);
-
 				}
 				break;
 			}
-			case "2": 
-			{
-				listFastest();
+			case "2": {
+				for (int i = 0; i < b.getPilots().length; i++) {
+					System.out.println(b.getPilots()[i]);
+				}
+				break;
+
 			}
 			case "3": {
-				// jet that flies the longest
+				listFastest();
+				break;
 			}
-
 			case "4": {
+				listLongest();
+				break;
+
+			}
+			case "5": {
 				addJet();
 				break;
 			}
 
-			case "5": {
+			case "6": {
+				addPilot();
+				break;
+			}
+
+			case "7": {
 				System.out.println("Thank you!");
 				System.exit(0);
+
 			}
 
 			default:
 				System.err.println("Not a valid entry");
 				break;
 			}
-		} while (!menu.equals("5"));
-
+		} while (!menu.equals("7"));
+		
+		kb.close();
 	}
 
 	public void run() {
@@ -80,6 +99,39 @@ public class JetApp {
 		jets[3] = new JetsImpl("F-4", 1200, 2300, 67_000_000);
 		jets[4] = new JetsImpl("Mig 31", 1400, 3000, 78_000_000);
 		h.setJets(jets);
+
+		// create an array of ints to track what indexes where used
+		int[] indexes = { 0, 0, 0, 0, 0 };
+
+		for (int i = 0; i < h.getJets().length; i++) // iterate over the jets array
+		{
+			// create boolean to determine if we must continue to search for a random number
+			boolean keepSearching = true;
+			do {
+				// generate random number
+				int random = (int) (Math.random() * pilot.length);
+				// check indexes array using "random" as the "index" to see the value
+				// if the value is 0 then we know that the index was not used
+				if (indexes[random] == 0) {
+					// use "random" as in index to grab a pilot out of the pilot array
+					Pilot p = pilot[random];
+
+					// get jets list from hangar
+					JetsImpl[] j = h.getJets();
+
+					// set the current indexes ("i") pilot to the pilot that you received from the
+					// array
+					j[i].setPilot(p);
+
+					// set the "random" index in the indexes array to 0 so it is not used again
+					indexes[random] = 1;
+
+					// set keepSearching to false so we do not keep searching for another random
+					// number
+					keepSearching = false;
+				}
+			} while (keepSearching);
+		}
 	}
 
 	public static void addJet() {
@@ -93,26 +145,50 @@ public class JetApp {
 		int price = kb.nextInt();
 
 		JetsImpl jet = new JetsImpl(model, speed, range, price);
+		Pilot p = addPilot();
+		jet.setPilot(p);
 		h.addJet(jet);
 
 	}
-	
-	public static void listFastest()
-	{
+
+	public static Pilot addPilot() {
+		System.out.println("Please add the name of the pilot you would like to add.");
+		String name = kb.next();
+		System.out.println("Please add the age of the pilot.");
+		double age = kb.nextDouble();
+		System.out.println("Please enter the experience of the pilot.");
+		double experience = kb.nextDouble();
+
+		Pilot pilot = new Pilot(name, age, experience);
+		// b.addPilot(pilot);
+
+		return pilot;
+
+	}
+
+	public static void listFastest() {
 		JetsImpl[] jetsTemp = h.getJets();
 		JetsImpl fastestJet = jetsTemp[0];
-		
-		for (int i = 0; i < jetsTemp.length; i++)
-		{
-			if(fastestJet.getSpeed() < jetsTemp[i].getSpeed())
-					{
-						fastestJet = jetsTemp[i];
-					}
+
+		for (int i = 0; i < jetsTemp.length; i++) {
+			if (fastestJet.getSpeed() < jetsTemp[i].getSpeed()) {
+				fastestJet = jetsTemp[i];
+			}
 		}
-		
-		
+		System.out.println(fastestJet);
+	}
+
+	public static void listLongest() {
+		JetsImpl[] jetsTemp = h.getJets();
+		JetsImpl longestJet = jetsTemp[0];
+
+		for (int i = 0; i < jetsTemp.length; i++) {
+			if (longestJet.getRange() < jetsTemp[i].getRange()) {
+				longestJet = jetsTemp[i];
+			}
+		}
+
+		System.out.println(longestJet);
 	}
 
 }
-
-

@@ -24,15 +24,15 @@ public class JetsImplTest {
 	public void test_speed_converts_to_mach() {
 		
 		double s = 100;
-		double c = 767.27;
+		double m = 767.27;
 		
 		double expected = .13;
-		double result = j.setSpeed(s, c);
-			expected = s/c;
+		double result = j.JetsImpl(s, m);
+			expected = s/m;
 		assertEquals(expected, result, 0.01);
-		assertEquals(.1303, j.setSpeed(100, 767.27), 0.01);
-		assertEquals(1, j.setSpeed(767.27, 767.27), 0.01);
-		assertEquals(1.5, j.setSpeed(1150.90, 767.27), 0.01);
+		assertEquals(.1303, j.JetsImpl(100, 767.27), 0.01);
+		assertEquals(1, j.JetsImpl(767.27, 767.27), 0.01);
+		assertEquals(1.5, j.JetsImpl(1150.90, 767.27), 0.01);
 		
 	}
 
