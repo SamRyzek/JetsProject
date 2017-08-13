@@ -39,6 +39,7 @@ public class JetApp {
 				break;
 			}
 			case "2": {
+			// case 2 lists available pilots
 				for (int i = 0; i < b.getPilots().length; i++) {
 					System.out.println(b.getPilots()[i]);
 				}
@@ -46,37 +47,43 @@ public class JetApp {
 
 			}
 			case "3": {
+			// case 3 lists fastest jet
 				listFastest();
 				break;
 			}
 			case "4": {
+			// case 4 lists jet with longest range
 				listLongest();
 				break;
 
 			}
+			// case 5 adds a jet to corresponding array and to the hangar
+			//also add a pilot to the barracks
 			case "5": {
 				addJet();
 				break;
 			}
-
+			// case 6, stand-alone option to add pilot to the barracks
 			case "6": {
 				addPilot();
 				break;
 			}
-
+			
+			//case 7 allows user to quit program
 			case "7": {
 				System.out.println("Thank you!");
 				System.exit(0);
 
 			}
-
+			
+			// default for invalid entry
 			default:
 				System.err.println("Not a valid entry");
 				break;
 			}
-		} while (!menu.equals("7"));
+		} while (!menu.equals("7")); //continues menu option until 7 is selected
 		
-		kb.close();
+		kb.close(); //Scanner closed
 	}
 
 	public void run() {
@@ -84,7 +91,7 @@ public class JetApp {
 	}
 
 	public static void initialize() {
-		Pilot[] pilot = new Pilot[5];
+		Pilot[] pilot = new Pilot[5]; //pilot array built
 		pilot[0] = new Pilot("Chuck Yaeger", 56, 25);
 		pilot[1] = new Pilot("Niel Armstrong", 45, 17);
 		pilot[2] = new Pilot("Buzz Aldron", 35, 13);
@@ -92,7 +99,7 @@ public class JetApp {
 		pilot[4] = new Pilot("Alen Shephard", 56, 42);
 		b.setPilots(pilot);
 
-		JetsImpl[] jets = new JetsImpl[5];
+		JetsImpl[] jets = new JetsImpl[5]; //jet array built
 		jets[0] = new JetsImpl("Boeing 777", 500, 3000, 100_000_000);
 		jets[1] = new JetsImpl("F-18", 700, 2100, 65_000_000);
 		jets[2] = new JetsImpl("C-5", 450, 3100, 175_000_000);
@@ -134,7 +141,8 @@ public class JetApp {
 		}
 	}
 
-	public static void addJet() {
+	public static void addJet() //user prompted to add jet to the fleet
+	{
 		System.out.println("Please add the model of the jet you would like to add.");
 		String model = kb.next();
 		System.out.println("Please add the speed of the jet in MPH.");
@@ -151,7 +159,8 @@ public class JetApp {
 
 	}
 
-	public static Pilot addPilot() {
+	public static Pilot addPilot() //user is prompted to "hire" a pilot
+	{
 		System.out.println("Please add the name of the pilot you would like to add.");
 		String name = kb.next();
 		System.out.println("Please add the age of the pilot.");
@@ -166,19 +175,26 @@ public class JetApp {
 
 	}
 
-	public static void listFastest() {
-		JetsImpl[] jetsTemp = h.getJets();
-		JetsImpl fastestJet = jetsTemp[0];
+	public static void listFastest() //this will list the fastest jet in the fleet
+	{
+		JetsImpl[] jetsTemp = h.getJets(); //jetsTemp is a new object created
+		JetsImpl fastestJet = jetsTemp[0]; //fastest jet is initiated to the first element of the array
 
-		for (int i = 0; i < jetsTemp.length; i++) {
-			if (fastestJet.getSpeed() < jetsTemp[i].getSpeed()) {
-				fastestJet = jetsTemp[i];
+		for (int i = 0; i < jetsTemp.length; i++)  // standard array for loop
+		{
+			if (fastestJet.getSpeed() < jetsTemp[i].getSpeed()) //if statement cycles through array
+											//and compares elements and their speed looking for the 
+											//fastest.
+			{
+				fastestJet = jetsTemp[i]; //assigns the fastest jet to the member of the array that was 
+										//was determined to be the fastest
 			}
 		}
-		System.out.println(fastestJet);
+		System.out.println(fastestJet); //prints out fastest jet
 	}
 
-	public static void listLongest() {
+	public static void listLongest() //same approach as looking for the fastest jet
+	{
 		JetsImpl[] jetsTemp = h.getJets();
 		JetsImpl longestJet = jetsTemp[0];
 
