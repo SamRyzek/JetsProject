@@ -23,7 +23,7 @@ View fastest jet
 View jet with longest range
 Add a jet to Fleet
 Quit
-User Story #2
+User Story #2 DONE
 
 List fleet prints out the model, speed, range, and price of each jet. (There must be at least 5 jets stored when the program starts).
 

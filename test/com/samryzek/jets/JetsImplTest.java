@@ -12,7 +12,7 @@ public class JetsImplTest {
 
 	@Before
 	public void setUp() throws Exception {
-		j = new JetsImpl(null, 0, 0, 0, null);
+		j = new JetsImpl(null, 0, 0, 0);
 	}
 
 	@After

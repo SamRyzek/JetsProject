@@ -21,8 +21,8 @@ public class JetsImpl {
 		this.model = model;
 	}
 
-	public double getSpeed() {
-		return speed;
+	public void getSpeed() {
+		
 	}
 
 	public double setSpeed(double s, double m) {
@@ -46,12 +46,12 @@ public class JetsImpl {
 		this.price = price;
 	}
 	
-	public JetsImpl(String model, double speed, double range, int price, Pilot pilot) {
+	public JetsImpl(String model, double speed, double range, int price) {
 		this.model = model;
 		this.speed = Math.round(speed/m*100.00)/100.00d;
 		this.range = range;
 		this.price = Math.round(price)/1_000_000;
-		this.pilot = pilot;
+	
 	}
 
 	@Override
@@ -61,7 +61,6 @@ public class JetsImpl {
 		builder.append("Speed: Mach: " + speed + "\n");
 		builder.append("Range: " + (int)range + " Miles\n");
 		builder.append("Price: $" + price + " Million\n");
-		builder.append(pilot);
 		return builder.toString();
 	}
 
