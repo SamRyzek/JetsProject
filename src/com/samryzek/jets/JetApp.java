@@ -26,11 +26,11 @@ public class JetApp
 		b.setPilots(pilot);
 		
 		JetsImpl[] jets = new JetsImpl[5];
-		jets[0] = new JetsImpl("Boeing 777", 500, 3000, 110, pilot[0]);
-		jets[1] = new JetsImpl("F-18", 700, 2100, 65, pilot[1]);
-		jets[2] = new JetsImpl("C-5", 450, 3100, 175, pilot[2]);
-		jets[3] = new JetsImpl("F-4", 1200, 2300, 67, pilot[3]);
-		jets[4] = new JetsImpl("Mig 31", 1400, 3000, 78, pilot[4]);
+		jets[0] = new JetsImpl("Boeing 777", 500, 3000, 100_000_000, pilot[0]);
+		jets[1] = new JetsImpl("F-18", 700, 2100, 65_000_000, pilot[1]);
+		jets[2] = new JetsImpl("C-5", 450, 3100, 175_000_000, pilot[2]);
+		jets[3] = new JetsImpl("F-4", 1200, 2300, 67_000_000, pilot[3]);
+		jets[4] = new JetsImpl("Mig 31", 1400, 3000, 78_000_000, pilot[4]);
 		h.setJets(jets);
 		
 		menu: while(true)
@@ -79,13 +79,7 @@ public class JetApp
 			System.err.println("Not a valid entry");
 			break;
 	}
-		
-		
-		
-		
-		
-		
-		
+
 
 	}
 	}

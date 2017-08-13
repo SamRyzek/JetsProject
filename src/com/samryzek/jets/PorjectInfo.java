@@ -31,7 +31,7 @@ User Story #3
 
 The view fastest jet and longest range options both print out all of the information about their jets.
 
-User Story #4
+User Story #4 Done
 
 Quit exits the program.
 
