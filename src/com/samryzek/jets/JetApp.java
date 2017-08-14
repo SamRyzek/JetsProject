@@ -169,7 +169,7 @@ public class JetApp {
 		double experience = kb.nextDouble();
 
 		Pilot pilot = new Pilot(name, age, experience);
-		// b.addPilot(pilot);
+		b.addPilot(pilot); //add pilot to barracks
 
 		return pilot;
 
