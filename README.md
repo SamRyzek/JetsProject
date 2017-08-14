@@ -11,6 +11,7 @@
 5. Arrays
 6. String Builder
 7. Constructors
+8. UML
 
 ### Overview
 
