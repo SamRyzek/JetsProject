@@ -26,7 +26,7 @@ public class JetApp {
 			System.out.println("[5] Add jet to fleet");
 			System.out.println("[6] Hire a pilot");
 			System.out.println("[7] Quit");
-			menu = kb.next();
+			menu = kb.nextLine();
 
 			// switch takes user through the various menu options
 			switch (menu) {
@@ -162,7 +162,7 @@ public class JetApp {
 	public static Pilot addPilot() //user is prompted to "hire" a pilot
 	{
 		System.out.println("Please add the name of the pilot you would like to add.");
-		String name = kb.next();
+		String name = kb.nextLine();
 		System.out.println("Please add the age of the pilot.");
 		double age = kb.nextDouble();
 		System.out.println("Please enter the experience of the pilot.");
